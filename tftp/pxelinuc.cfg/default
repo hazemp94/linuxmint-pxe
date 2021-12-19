@@ -1,12 +1,9 @@
 
+default vesamenu.c32
 
+
+label install1
+menu label ^Install linuxmint 19 LTS Desktop
 menu default
-LABEL LinuxMint Livecd 19 Mate AMD64
-KERNEL images/linuxmint18/casper/vmlinuz
-APPEND root=/dev/nfs boot=casper netboot=nfs nfsroot=192.168.50.1:/tftpboot/images/linuxmint18 initrd=images/linuxmint18/casper/initrd.lz ip=dhcp nosplash toram ---
-
-
-LABEL LinuxMint-18-Cinnamon
-    MENU LABEL Wipe disk and install Linux Mint 18
-    KERNEL images/linuxmint18/casper/vmlinuz
-    APPEND initrd=images/linuxmint18/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.50.1:/tftpboot/images/linuxmint18/ ip=dhcp -- locale=en_US keyboard-configuration/modelcode=SKIP automatic-ubiquity url=http://192.168.50.1/linuxmint18-preseed.txt
+kernel linuxmint19/vmlinuz
+append initrd=linuxmint19/initrd.lz boot=casper netboot=nfs nfsroot=192.168.50.1:/netboot/nfs/linuxmint19/ ip=dhcp splash toram --- -- locale=en_US keyboard-configuration/modelcode=SKIP automatic-ubiquity url=http://192.168.50.1/linuxmint19-preseed.txt
