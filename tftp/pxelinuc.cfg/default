@@ -1,0 +1,12 @@
+
+
+menu default
+LABEL LinuxMint Livecd 19 Mate AMD64
+KERNEL images/linuxmint18/casper/vmlinuz
+APPEND root=/dev/nfs boot=casper netboot=nfs nfsroot=192.168.50.1:/tftpboot/images/linuxmint18 initrd=images/linuxmint18/casper/initrd.lz ip=dhcp nosplash toram ---
+
+
+LABEL LinuxMint-18-Cinnamon
+    MENU LABEL Wipe disk and install Linux Mint 18
+    KERNEL images/linuxmint18/casper/vmlinuz
+    APPEND initrd=images/linuxmint18/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.50.1:/tftpboot/images/linuxmint18/ ip=dhcp -- locale=en_US keyboard-configuration/modelcode=SKIP automatic-ubiquity url=http://192.168.50.1/linuxmint18-preseed.txt
